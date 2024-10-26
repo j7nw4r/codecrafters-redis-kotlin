@@ -23,6 +23,6 @@ fun main(args: Array<String>) {
 fun handleConnection(socket: Socket) {
     println("accepted new connection")
     PrintWriter(socket.getOutputStream(), false).use {
-        it.print("+PONG\r\n")
+        it.println("+PONG\r")
     }
 }
