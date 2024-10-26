@@ -14,10 +14,8 @@ fun main(args: Array<String>) {
      // ensures that we don't run into 'Address already in use' errors
      serverSocket.reuseAddress = true
 
-    while (true) {
-        val socket = serverSocket.accept() // Wait for connection from client.
-        handleConnection(socket)
-    }
+    val socket = serverSocket.accept() // Wait for connection from client.
+    handleConnection(socket)
 }
 
 fun handleConnection(socket: Socket) {
